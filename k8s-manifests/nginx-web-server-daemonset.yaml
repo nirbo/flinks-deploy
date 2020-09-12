@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nginx-web-server
+  namespace: flinks
+  labels:
+    app: nginx-web-server
+spec:
+  selector:
+    matchLabels:
+      name: nginx-web-server
+      app: nginx-web-server
+  template:
+    metadata:
+      labels:
+        name: nginx-web-server
+        app: nginx-web-server
+    spec:
+      containers:
+        - name: nginx-web-server
+          image: nirbo2/nginx-alpine-flinks:ea2df779c04e8c644f20b4e0a7dcff531b076a1b
+          readinessProbe:
+            httpGet:
+              path: / 
+              port: 80

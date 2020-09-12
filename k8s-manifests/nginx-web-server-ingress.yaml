@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: nginx-web-server-ingress
+  namespace: flinks
+spec:
+  rules:
+#    - host: www.example.com
+     - http:
+         paths:
+           - backend:
+               serviceName: nginx-web-server
+               servicePort: 80
+             path: /
