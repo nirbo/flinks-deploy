@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: DaemonSet
+# In case more than one pod is required on each node, I'd use Deployment instead of DaemonSet
 metadata:
   name: nginx-web-server
   namespace: flinks
