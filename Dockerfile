@@ -1,7 +1,5 @@
 FROM alpine:3.12
 
-ARG GIT_COMMIT=unspecified
-LABEL git_commit=$GIT_COMMIT
 LABEL maintainer="NGINX Docker Maintainers <docker-maint@nginx.com>"
 
 ENV NGINX_VERSION 1.19.2
