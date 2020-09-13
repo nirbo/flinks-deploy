@@ -1,8 +1,14 @@
-FROM golang:1.14.9-buster
+# Stage 1 - Build the REST API Go Binary
+FROM golang:alpine AS builder
 
-LABEL maintainer="Nir Ben-Or for Flinks <nirbo2@gmail.com>"
+RUN apk update && apk add --no-cache git
+WORKDIR /
+COPY flinks-crud-rest-api/flinks-crud-rest-api.go /
+RUN go get -d -v
+RUN go build -o /go/bin/flinks-crud-rest-api
 
-RUN mkdir -p /opt/flinks-crud-rest-api
-COPY flinks-crud-rest-api/flinks-crud-rest-api /opt/flinks-crud-rest-api/
-WORKDIR /opt/flinks-crud-rest-api/
-CMD ["./flinks-crud-rest-api"]
+# Stage 2 - Copy the compiled binary into a clean Alpine container for greatly reduced container size
+FROM alpine:3.12
+
+COPY --from=builder /go/bin/flinks-crud-rest-api /flinks-crud-rest-api
+ENTRYPOINT ["/flinks-crud-rest-api"]
