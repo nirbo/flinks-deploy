@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: nginx-web-server
-          image: nirbo2/nginx-alpine-flinks:ea2df779c04e8c644f20b4e0a7dcff531b076a1b
+          image: nirbo2/nginx-alpine-flinks:8010ac4e03d90268d907e39b4bf2714621074dc4
           readinessProbe:
             httpGet:
               path: / 
