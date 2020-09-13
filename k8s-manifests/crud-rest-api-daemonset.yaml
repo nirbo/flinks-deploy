@@ -19,8 +19,8 @@ spec:
     spec:
       containers:
         - name: crud-rest-api
-          image: nirbo2/crud-rest-api-flinks:d2b9b487889e4f0d39fa1e0d9959214843a6b7ff
+          image: nirbo2/crud-rest-api-flinks:6b2808b5bdbda1168c9a95da3aa62d18687787f7
           readinessProbe:
             httpGet:
-              path: / 
+              path: /health
               port: 8080

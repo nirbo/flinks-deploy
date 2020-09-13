@@ -32,7 +32,13 @@ func main() {
 	router.HandleFunc("/persons/{id}", updatePersonByID).Methods("PUT")
 	router.HandleFunc("/persons/{id}", deletePersonByID).Methods("DELETE")
 
+	router.HandleFunc("/health", healthCheck).Methods("GET")
+
 	http.ListenAndServe(":8080", router)
+}
+
+func healthCheck(writer http.ResponseWriter, request *http.Request) {
+	writer.WriteHeader(200)
 }
 
 // Delete a single person object by ID
