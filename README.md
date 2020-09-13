@@ -37,8 +37,10 @@ The API is capable of five basic CRUD operations, listed and detailed below as w
 
 #### Functions:
 1.	**getAllPersons()**: Retrieve all Person objects.
-Allowed methods: **GET**
-**Usage:**
+
+	Allowed methods: **GET**
+
+	**Usage:**
 	```bash
 	curl -X GET http://newcomers-api.internal.fin.ag/persons 
 	```
