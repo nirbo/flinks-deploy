@@ -47,16 +47,20 @@ The API is capable of five basic CRUD operations, listed and detailed below as w
 <br>
 
 2.	**getPersonByID()**: Retrieve one Person object using its JSON array index ID.
-Allowed methods: **GET**
-**Usage:**
+
+	Allowed methods: **GET**
+
+	**Usage:**
 	```bash
 	curl -X GET http://newcomers-api.internal.fin.ag/persons/{0..N} 
 	```
 <br>
 
 3.	**addPerson()**: Add a new Person object.
-Allowed methods: **POST**
-**Usage:**
+
+	Allowed methods: **POST**
+	
+	**Usage:**
 	```bash
 	 curl -X POST  -d ' \
         {
@@ -72,9 +76,12 @@ Allowed methods: **POST**
 	<br>
 	
 	4.	**updatePersonByID()**: Update one or more fields of a single Person object that already exists in the array using its JSON array index ID.
-	**Note:** The current implementation requires all fields to be populated, including the fields that are not being updated.
-	Allowed methods: **PUT**
-	**Usage:**
+
+		**Note:** The current implementation requires all fields to be populated, including the fields that are not being updated.
+
+		Allowed methods: **PUT**
+
+		**Usage:**
 	```bash
 	 curl -X PUT  -d ' \
         {
@@ -90,7 +97,9 @@ Allowed methods: **POST**
 <br>
 
 5.	**deletePersonByID()**: Delete one Person object using its JSON array index ID.
+
 	Allowed methods: **DELETE**
+
 	**Usage:**
 	```bash
 	curl -X DELETE http://newcomers-api.internal.fin.ag/persons/{0..N} 
