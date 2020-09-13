@@ -1,12 +1,14 @@
 apiVersion: apps/v1
-kind: DaemonSet
-# In case more than one pod is required on each node, I'd use Deployment instead of DaemonSet
+kind: Deployment
+# I'm using Deployment because this API specifically is in-memory and not persistent, hence every request goes to a different pod with a different memory state.
+# When using persistence I'd use DaemonSet instead.
 metadata:
   name: crud-rest-api
   namespace: crud-rest-api
   labels:
     app: crud-rest-api
 spec:
+  replicas: 1
   selector:
     matchLabels:
       name: crud-rest-api 
