@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: crud-rest-api
+  namespace: crud-rest-api
+spec:
+  selector:
+    app: crud-rest-api
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
