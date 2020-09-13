@@ -73,9 +73,9 @@ The API is capable of five basic CRUD operations, listed and detailed below as w
         }' \
         http://newcomers-api.internal.fin.ag/persons
 	```
-	<br>
+<br>
 	
-4.	**updatePersonByID()**: Update one or more fields of a single Person object that already exists in the array using its JSON array index ID.
+4.		**updatePersonByID()**: Update one or more fields of a single Person object that already exists in the array using its JSON array index ID.
 
 		**Note:** The current implementation requires all fields to be populated, including the fields that are not being updated.
 
