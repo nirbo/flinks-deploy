@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: crud-rest-api
-          image: nirbo2/crud-rest-api-flinks:496cd7d0a9051eaec6ffb55b578174db99d127aa
+          image: nirbo2/crud-rest-api-flinks:57af2d92f31e362175e91161d7a32d001aeec12f
           readinessProbe:
             httpGet:
               path: /health
