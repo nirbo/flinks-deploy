@@ -17,6 +17,10 @@ spec:
                serviceName: crud-rest-api
                servicePort: 8080
              path: /persons
+           - backend:
+               serviceName: crud-rest-api
+               servicePort: 8080
+             path: /health
   tls:
     - secretName: newcomers-api-internal-fin-ag
       hosts:
