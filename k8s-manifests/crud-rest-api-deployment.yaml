@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-# I'm using Deployment because this API specifically is in-memory and not persistent, hence every request goes to a different pod with a different memory state.
-# When using persistence I'd use DaemonSet instead.
+# I'm using a Deployment with only 1 replica because this API specifically is in-memory and not persistent, hence every request goes to a different pod with a different memory state while the load-balancer works in Round-Robin mode; Whenever using a persistent backend, I'd use DaemonSet instead.
 metadata:
   name: crud-rest-api
   namespace: crud-rest-api

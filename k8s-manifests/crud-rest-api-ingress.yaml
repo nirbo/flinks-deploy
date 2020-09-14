@@ -3,6 +3,9 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    ingress.kubernetes.io/secure-backends: "true"
   name: crud-rest-api-ingress
   namespace: crud-rest-api
 spec:
@@ -14,3 +17,7 @@ spec:
                serviceName: crud-rest-api
                servicePort: 8080
              path: /persons
+  tls:
+    - secretName: newcomers-api-internal-fin-ag
+      hosts:
+        - newcomers-api.internal.fin.ag
