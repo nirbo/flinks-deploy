@@ -10,13 +10,17 @@
 **Cert-Manager**
 ```helm repo add jetstack https://charts.jetstack.io```
 
+## Docker Hub Repository
+My repository that stores the containers used by K8s can be found here:
+```https://hub.docker.com/u/nirbo2```
+
 ## Web Application
-The web-app is available via: http://newcomers.internal.fin.ag
+The web-app is available via: https://newcomers.internal.fin.ag
 
 
 ## REST API Documentation
 
-The REST API is accessible via http://newcomers-api.internal.fin.ag/persons
+The REST API is accessible via https://newcomers-api.internal.fin.ag/persons
 It is built around the "Person" struct and each object contains a person's details, as shown in the example below.
 The API is capable of five basic CRUD operations, listed and detailed below as well, and includes an additional /health endpoint for the DaemonSet's readinessProbe.
 
@@ -42,7 +46,7 @@ The API is capable of five basic CRUD operations, listed and detailed below as w
 
 	**Usage:**
 	```bash
-	curl -X GET http://newcomers-api.internal.fin.ag/persons 
+	curl -X GET https://newcomers-api.internal.fin.ag/persons 
 	```
 <br>
 
@@ -52,7 +56,7 @@ The API is capable of five basic CRUD operations, listed and detailed below as w
 
 	**Usage:**
 	```bash
-	curl -X GET http://newcomers-api.internal.fin.ag/persons/{0..N} 
+	curl -X GET https://newcomers-api.internal.fin.ag/persons/{0..N} 
 	```
 <br>
 
@@ -71,7 +75,7 @@ The API is capable of five basic CRUD operations, listed and detailed below as w
                 "eye_color": "Brown"
             }
         }' \
-        http://newcomers-api.internal.fin.ag/persons
+        https://newcomers-api.internal.fin.ag/persons
 	```
 <br>
 	
@@ -92,7 +96,7 @@ The API is capable of five basic CRUD operations, listed and detailed below as w
                 "eye_color": "Blue"
             }
         }' \
-        http://newcomers-api.internal.fin.ag/persons/{0..N}
+        https://newcomers-api.internal.fin.ag/persons/{0..N}
 	```
 <br>
 
@@ -102,6 +106,6 @@ The API is capable of five basic CRUD operations, listed and detailed below as w
 
 	**Usage:**
 	```bash
-	curl -X DELETE http://newcomers-api.internal.fin.ag/persons/{0..N} 
+	curl -X DELETE https://newcomers-api.internal.fin.ag/persons/{0..N} 
 	```
 	
