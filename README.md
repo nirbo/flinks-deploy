@@ -109,3 +109,7 @@ The API is capable of five basic CRUD operations, listed and detailed below as w
 	curl -X DELETE https://newcomers-api.internal.fin.ag/persons/{0..N} 
 	```
 	
+6.	**healthCheck()**: A method accessible by https://newcomers-api.internal.fin.ag/health that is used for checking the health of the REST API application.
+    This method is used only by the REST API's K8s Deployment 'readinessProbe'.
+
+	Allowed methods: **GET**
