@@ -7,8 +7,8 @@ metadata:
   namespace: flinks
 spec:
   rules:
-#    - host: www.example.com
-     - http:
+     - host: newcomers.internal.fin.ag
+       http:
          paths:
            - backend:
                serviceName: nginx-web-server

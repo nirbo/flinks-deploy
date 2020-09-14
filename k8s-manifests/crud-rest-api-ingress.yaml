@@ -7,8 +7,8 @@ metadata:
   namespace: crud-rest-api
 spec:
   rules:
-#    - host: www.example.com
-     - http:
+     - host: newcomers-api.internal.fin.ag
+       http:
          paths:
            - backend:
                serviceName: crud-rest-api
